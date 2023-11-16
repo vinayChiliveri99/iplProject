@@ -52,19 +52,23 @@ function findHighestPlayerOfMatchAwardsInaSeason(matches) {
   let answer = {};
 
   for (let year in result) {
-    let playerWithMaxPOM = '';
+    let playerWithMaxPOM = [];
     let maximum = 0;
 
     for (let player in result[year]) {
       if (result[year][player] > maximum) {
         maximum = result[year][player];
-        playerWithMaxPOM = player;
+        playerWithMaxPOM = [player];
+      } else if (result[year][player] === maximum) {
+        playerWithMaxPOM.push(player);
       }
     }
 
-    answer[year] = {
-      [playerWithMaxPOM]: maximum,
-    };
+    answer[year] = {};
+
+    playerWithMaxPOM.forEach((player) => {
+      answer[year][player] = maximum;
+    });
   }
 
   console.log(JSON.stringify(answer));
