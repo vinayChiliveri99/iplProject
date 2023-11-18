@@ -5,7 +5,7 @@ function findNoOfMatchesWonPerTeamPerYearWithHOF(matches) {
     let winnerTeam = match.winner;
     let year = match.season;
 
-    if (winnerTeam !== '') {
+    if (winnerTeam !== '' && year !== '') {
       if (acc[year] !== undefined) {
         if (acc[year][winnerTeam] !== undefined) {
           acc[year][winnerTeam] += 1;
