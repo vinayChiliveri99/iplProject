@@ -1,7 +1,5 @@
 // 9. Find the bowler with the best economy in super overs
 let deliveries = require('../data/deliveriesInJson.json');
-//
-//
 
 function findBestEconomicalBowlerInSuperOversUsingHOF(deliveries) {
   // filter the data, to contain only deliveries bowled in super over.
