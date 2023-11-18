@@ -6,10 +6,12 @@ function countMatchesPerYearUsingHOF(matches) {
   const result = matches.reduce((totalMatchesIn, match) => {
     let year = match.season;
 
-    if (totalMatchesIn[year] !== undefined) {
-      totalMatchesIn[year] += 1;
-    } else {
-      totalMatchesIn[year] = 1;
+    if (year !== '') {
+      if (totalMatchesIn[year] !== undefined) {
+        totalMatchesIn[year] += 1;
+      } else {
+        totalMatchesIn[year] = 1;
+      }
     }
 
     return totalMatchesIn;
