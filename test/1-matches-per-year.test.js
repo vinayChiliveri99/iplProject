@@ -11,6 +11,77 @@ test('counts matches per every year with whole data', () => {
   expect(countMatchesPerYearUsingHOF(matches)).toStrictEqual(output1);
 });
 
+// year is empty case.
+
+const testFile2 = [
+  {
+    id: '1',
+    season: '', // season (year is empty)
+    city: 'Hyderabad',
+    date: '2017-04-05',
+    team1: 'Sunrisers Hyderabad',
+    team2: 'Royal Challengers Bangalore',
+    toss_winner: 'Royal Challengers Bangalore',
+    toss_decision: 'field',
+    result: 'normal',
+    dl_applied: '0',
+    winner: 'Sunrisers Hyderabad',
+    win_by_runs: '35',
+    win_by_wickets: '0',
+    player_of_match: 'Yuvraj Singh',
+    venue: 'Rajiv Gandhi International Stadium, Uppal',
+    umpire1: 'AY Dandekar',
+    umpire2: 'NJ Llong',
+    umpire3: '',
+  },
+  {
+    id: '2',
+    season: '2017',
+    city: 'Hyderabad',
+    date: '2017-04-05',
+    team1: 'Sunrisers Hyderabad',
+    team2: 'Royal Challengers Bangalore',
+    toss_winner: 'Royal Challengers Bangalore',
+    toss_decision: 'field',
+    result: 'normal',
+    dl_applied: '0',
+    winner: 'Sunrisers Hyderabad',
+    win_by_runs: '35',
+    win_by_wickets: '0',
+    player_of_match: 'Yuvraj Singh',
+    venue: 'Rajiv Gandhi International Stadium, Uppal',
+    umpire1: 'AY Dandekar',
+    umpire2: 'NJ Llong',
+    umpire3: '',
+  },
+  {
+    id: '3',
+    season: '2017',
+    city: 'Hyderabad',
+    date: '2017-04-05',
+    team1: 'Sunrisers Hyderabad',
+    team2: 'Royal Challengers Bangalore',
+    toss_winner: 'Royal Challengers Bangalore',
+    toss_decision: 'field',
+    result: 'normal',
+    dl_applied: '0',
+    winner: 'Sunrisers Hyderabad',
+    win_by_runs: '35',
+    win_by_wickets: '0',
+    player_of_match: 'Yuvraj Singh',
+    venue: 'Rajiv Gandhi International Stadium, Uppal',
+    umpire1: 'AY Dandekar',
+    umpire2: 'NJ Llong',
+    umpire3: '',
+  },
+];
+
+test('counts matches per every year with testFile2', () => {
+  expect(countMatchesPerYearUsingHOF(testFile2)).toStrictEqual({
+    2017: 2,
+  });
+});
+
 /**
  * 
 const sum = require('./sum');
