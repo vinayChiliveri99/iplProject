@@ -1,7 +1,6 @@
 //3. Extra runs conceded per team in the year 2016
 
 // the common thing in both data is match id.
-
 // and then for every match just calculate the extra runs (by bowling team).
 
 // the output has to be like this
