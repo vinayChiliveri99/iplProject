@@ -7,7 +7,7 @@ const strikeRateOfaBatsmanForEachSeasonUSingHOF = require('../src/server/7-strik
 
 test('strike of a batsman for every season with empty data', () => {
   expect(
-    strikeRateOfaBatsmanForEachSeasonUSingHOF([], [])
+    strikeRateOfaBatsmanForEachSeasonUSingHOF([], [], '')
   ).toStrictEqual({});
 });
 
@@ -16,6 +16,10 @@ const output1 = require('../src/public/output/7-strikeRateOfaBatsmanForEachSeaso
 
 test('strike rate of a batsman (MS Dhoni) for every season with full data', () => {
   expect(
-    strikeRateOfaBatsmanForEachSeasonUSingHOF(matches, deliveries)
+    strikeRateOfaBatsmanForEachSeasonUSingHOF(
+      matches,
+      deliveries,
+      'MS Dhoni'
+    )
   ).toStrictEqual(output1);
 });
