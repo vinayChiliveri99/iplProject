@@ -1,8 +1,12 @@
 const countMatchesPerYearUsingHOF = require('../src/server/1-matches-per-year');
 
+// 1. with empty input.
+
 test('counts matches per every year', () => {
   expect(countMatchesPerYearUsingHOF([])).toStrictEqual({});
 });
+
+// 2. with full data as input.
 
 const matches = require('../src/data/matchesInJson.json');
 const output1 = require('../src/public/output/1-matchesPerYear.json');
@@ -11,7 +15,8 @@ test('counts matches per every year with whole data', () => {
   expect(countMatchesPerYearUsingHOF(matches)).toStrictEqual(output1);
 });
 
-// year is empty case.
+// 3. when there is a slihgt defect in the year, that is year is empty.
+// in this problem year plays a major role.
 
 const testFile2 = [
   {
