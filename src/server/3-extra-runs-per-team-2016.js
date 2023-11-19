@@ -17,7 +17,7 @@ function extraRunsCalculatorUsingHOF(matches, deliveries) {
   // get the match ids from the year 2016.
 
   const matchIds = matches.reduce((acc, match) => {
-    if (match.season === '2016') {
+    if (match.season === '2016' && match.id != '') {
       acc.add(match.id);
     }
     return acc;
@@ -28,7 +28,10 @@ function extraRunsCalculatorUsingHOF(matches, deliveries) {
   const result = deliveries.reduce((acc, delivery) => {
     let currentMatchId = delivery.match_id;
     let team = delivery.bowling_team;
-    let extraRuns = parseInt(delivery.extra_runs);
+    let extraRuns =
+      delivery.extra_runs == ''
+        ? parseInt(0)
+        : parseInt(delivery.extra_runs);
 
     // checking if current match id, is part of the match id's set we have, and the team is not empty.
     // if so keep updating the acc, if it has team by adding extra runs.
