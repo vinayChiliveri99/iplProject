@@ -27,15 +27,17 @@ test('strike rate of a batsman (MS Dhoni) for every season with full data', () =
 // 3. to match with some other players data.
 
 const output3 = {
-  2009: 123.48,
-  2010: 146.03,
-  2011: 117.82,
-  2012: 162.58,
-  2013: 126.54,
-  2014: 142.32,
-  2015: 155.62,
-  2016: 151.25,
-  2017: 141.2,
+  'DA Warner': {
+    2009: 123.48,
+    2010: 146.03,
+    2011: 117.82,
+    2012: 162.58,
+    2013: 126.54,
+    2014: 142.32,
+    2015: 155.62,
+    2016: 151.25,
+    2017: 141.2,
+  },
 };
 
 test('strike rate of DA Warner is being tested, with full data', () => {
@@ -46,4 +48,12 @@ test('strike rate of DA Warner is being tested, with full data', () => {
       'DA Warner'
     )
   ).toStrictEqual(output3);
+});
+
+// 4. when you don't pass any player, we ll get empty object.
+
+test('strike rate of DA Warner is being tested, with full data', () => {
+  expect(
+    strikeRateOfaBatsmanForEachSeasonUSingHOF(matches, deliveries, '')
+  ).toStrictEqual({});
 });
