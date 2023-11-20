@@ -7,7 +7,6 @@ function findNoOfMatchesWonPerTeamPerYearWithHOF(matches) {
     const winnerTeam = match.winner;
     const year = match.season;
 
-    // eslint-disable-next-line prettier/prettier
     if (winnerTeam !== '' && year !== '') {
       // when the data is clear, move ahead with creating the object,
       // if there's no object with the winning team in that year, create one
