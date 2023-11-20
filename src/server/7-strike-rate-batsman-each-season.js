@@ -6,6 +6,7 @@ function strikeRateOfaBatsmanForEachSeasonUSingHOF(
   playerName = 'MS Dhoni' // Default value for playerName is 'MS Dhoni'
 ) {
   // Filter deliveries data for the specified player
+  if (playerName === '') return {};
   const filteredData = deliveries.filter((delivery) => {
     return delivery.batsman === playerName;
   });
@@ -58,7 +59,7 @@ function strikeRateOfaBatsmanForEachSeasonUSingHOF(
   );
 
   // Return the final object containing the strike rate for each season
-  return playerStrikeRate;
+  return { [playerName]: playerStrikeRate };
 }
 
 // Export the function for external use
