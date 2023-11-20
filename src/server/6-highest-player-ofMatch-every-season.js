@@ -1,24 +1,26 @@
 // 6. Find a player who has won the highest number of Player of the Match awards for each season
 
-let matches = require('../data/matchesInJson.json');
-
 function findHighestPlayerOfMatchAwardsInaSeasonWithHOF(matches) {
   // Initialize an empty object to store the midway data named as result.
 
   let result = matches.reduce((acc, match) => {
-    // Check if the season exists in the result object, if not, create an empty object for the season
+    // check if acc doesn't contain season, create one with player of match with 0.
 
     if (acc[match.season] === undefined) {
-      acc[match.season] = {};
-    } else {
-      // Update the count for the player in the current season
-
-      if (acc[match.season][match.player_of_match] === undefined) {
-        acc[match.season][match.player_of_match] = 1;
-      } else {
-        acc[match.season][match.player_of_match] += 1;
-      }
+      acc[match.season] = {
+        [match.player_of_match]: 0,
+      };
     }
+
+    // checks if acc in particular season, checks if player of match doesnt exist
+    // creates ones and assigns value to zero.
+
+    if (acc[match.season][match.player_of_match] === undefined) {
+      acc[match.season][match.player_of_match] = 0;
+    }
+    // this runs evertime, so no need to initialize the above part with 1.
+
+    acc[match.season][match.player_of_match]++;
 
     return acc;
   }, {});
@@ -74,11 +76,9 @@ function findHighestPlayerOfMatchAwardsInaSeasonWithHOF(matches) {
     return acc;
   }, {});
 
-  // console.log(finalResult);
+  //  console.log(finalResult);
 
   return finalResult;
 }
-
-// findHighestPlayerOfMatchAwardsInaSeasonWithHOF(matches);
 
 module.exports = findHighestPlayerOfMatchAwardsInaSeasonWithHOF;
