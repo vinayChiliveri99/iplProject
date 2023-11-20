@@ -1,4 +1,4 @@
-//3. Extra runs conceded per team in the year 2016
+// 3. Extra runs conceded per team in the year 2016
 
 // the common thing in both data is match id.
 // and then for every match just calculate the extra runs (by bowling team).
@@ -26,9 +26,9 @@ function extraRunsCalculatorUsingHOF(matches, deliveries) {
   // console.log(matchIds);
 
   const result = deliveries.reduce((acc, delivery) => {
-    let currentMatchId = delivery.match_id;
-    let team = delivery.bowling_team;
-    let extraRuns =
+    const currentMatchId = delivery.match_id;
+    const team = delivery.bowling_team;
+    const extraRuns =
       delivery.extra_runs == ''
         ? parseInt(0)
         : parseInt(delivery.extra_runs);
