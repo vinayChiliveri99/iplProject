@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-param-reassign */
 // 1. Number of matches played per year for all the years in IPL.
 
 function countMatchesPerYearUsingHOF(matches) {
