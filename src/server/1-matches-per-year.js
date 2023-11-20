@@ -1,10 +1,12 @@
-//1. Number of matches played per year for all the years in IPL.
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-param-reassign */
+// 1. Number of matches played per year for all the years in IPL.
 
 function countMatchesPerYearUsingHOF(matches) {
   // iterating over matches data, and creating a object for year and keep on updating it.
 
   const result = matches.reduce((totalMatchesIn, match) => {
-    let year = match.season;
+    const year = match.season;
 
     // check if year is not, empty. As year is the center point of our problem.
 
