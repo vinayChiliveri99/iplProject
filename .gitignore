@@ -13,6 +13,9 @@ lerna-debug.log*
 #eslint ignoring
 .eslintrc
 
+# ds store
+.DS_Store
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
